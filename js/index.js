@@ -7,4 +7,20 @@ window.onload=()=>{
             document.getElementById("menumovil").classList.add("menu-movil");
         }
     }
+
+    let url="https:pokeapi.co/api/v2/pokemon";
+    document.getElementById("loading").style.display="block"
+    fetch(url)
+    .then(response =>{
+        if (!response.ok){
+            throw new Error('Network response was not ok');
+        }return response.json();
+    })
+    .then(data=>{
+        document.getElementById("loading").style.display="none";
+        console.log(data);
+    })
+    .catch(error=>{
+        console.error('There was a problem with the fetch operation:',error);
+    });
 }
