@@ -39,6 +39,12 @@ header{
     align-items: center;
 
 }
+#containerpk{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 
 /*modifica como se ve en pantallas menores*/
 

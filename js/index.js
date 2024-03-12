@@ -21,12 +21,14 @@ window.onload=()=>{
     .then(data=>{
         document.getElementById("loading").style.display="none";
         //console.log(data);para ver en consola
+       mostrarRapido(data.results)
+       
         for (const pk of data.results) {
             if(pokemon[pk.name]==undefined){
                 pokemon[pk.name]={url:pk.url}
             }
         }
-        CargarDatosPokemon
+        CargarDatosPokemon()
     })
     .catch(error=>{
         console.error('There was a problem with the fetch operation:',error);
@@ -44,7 +46,7 @@ function CargarDatosPokemon() {
         })
 
         .then(datos=>{
-            console.log(datos);
+            extractInfoPokemon(datos);
         })
 
         .catch(error=>{
@@ -52,4 +54,33 @@ function CargarDatosPokemon() {
         })
     }
     
+}
+
+function extractInfoPokemon(info) {
+    pokemon[info.name]={
+        img:info.sprites.front_default,
+        types:info.types.map(t=>t.type.name),
+        id:info.id,
+        experience:info.base_experience
+    }
+    
+}
+function mostrarRapido (listaPk){
+    var contenidoPk="";
+    for (const pk in listaPk) {
+        if (Object.hasOwnProperty.call(listaPk, pk)) {
+            const element = listaPk[pk];
+            contenidoPk+= `<article id="${element.name}>
+            <h3>${element.name}</h3>
+            <img src="img/loading.gif" alt="" style="width:50%;">
+            <div>
+               <p><label>Types:</label></p>
+               <p><label>Id:</label></p>
+               <p><label>Experience</label></p> 
+            </div>
+    
+        </article> `   
+        }
+    }
+    document.getElementById("containerpk").innerHTML=contenidoPk;
 }
