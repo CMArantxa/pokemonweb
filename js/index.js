@@ -1,4 +1,6 @@
 var pokemon={};
+var next="";
+var previous="";
 
 window.onload=()=>{
     let menu=document.getElementById("ticmenu");
@@ -9,8 +11,24 @@ window.onload=()=>{
             document.getElementById("menumovil").classList.add("menu-movil");
         }
     }
-
+    
     let url="https:pokeapi.co/api/v2/pokemon";
+ 
+    getDataUrl(url);
+
+    let buttonNext=document.getElementById("next");
+    buttonNext.onclick=()=>{
+        getDataUrl(next)
+    }
+    let buttonPrevious=document.getElementById("previous");
+    buttonPrevious.onclick=()=>{
+        getDataUrl(previous)
+    }
+    
+}
+
+function getDataUrl (url){
+    
     document.getElementById("loading").style.display="block"
     fetch(url)
     .then(response =>{
@@ -19,6 +37,20 @@ window.onload=()=>{
         }return response.json();
     })
     .then(data=>{
+        if(data.next==null){
+            document.getElementById("next").style.display="none";
+        }else{
+            document.getElementById("next").style.display="inline";
+        }
+        if(data.previous==null){
+            document.getElementById("previous").style.display="none";
+        }else{
+            document.getElementById("previous").style.display="inline";
+        }
+        next=data.next;
+       
+        previous=data.previous;
+
         document.getElementById("loading").style.display="none";
         //console.log(data);para ver en consola
        mostrarRapido(data.results)
@@ -45,7 +77,7 @@ function CargarDatosPokemon() {
             }return resp.json();
         })
         .then(datos=>{
-            extractInfoPokemon(datos);
+           setTimeout (extractInfoPokemon,2000,datos);
         })
 
         .catch(error=>{
