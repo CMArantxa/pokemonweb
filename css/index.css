@@ -1,16 +1,20 @@
 #logo{
     width: 200px;
+    background-color: bisque;
 }
 
 /*header es un contenedor en el body*/
 
 header{
     display: flex;
-    justify-content: space-between;
+    margin-right: 15%;
+    justify-content: space-around;
+    background-color: cornflowerblue;
 }
 .container{
     width: 80%;
     margin: 0 auto;
+    background-color: cadetblue;
 }
 .stylemenu{
     list-style: none;
@@ -22,7 +26,13 @@ header{
     margin: 10px;
 }
 #menumovil li:nth-child(-n+2){
-    border-right: 1px solid blue;
+    border-right: 3px black;
+}
+#menumovil{
+    font-size: medium;
+    font-weight: bold;
+    font-style: oblique;
+    color: brown;
 }
 #loading{
     display: block;
@@ -31,8 +41,9 @@ header{
 
 }
 #containerpk article{
-    width: 20%;
-    border: 1px solid blue;
+    background-color: mediumaquamarine;
+    width: 22%;
+    border:2px black;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -42,6 +53,16 @@ header{
 #containerpk{
     display: flex;
     flex-wrap: wrap;
+}
+button{
+
+    margin-right: 10%;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium';
+    font-weight: bold;
+    font-display: flex;
+    text-align: right;
+    background-color: aquamarine;
 }
 
 
@@ -67,7 +88,7 @@ header{
 }
 #containerpk article{
     width: 100%;
-    border: 1px solid blue;
+    border: 2px black;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
