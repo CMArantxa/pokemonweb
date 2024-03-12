@@ -44,14 +44,13 @@ function CargarDatosPokemon() {
 
             }return resp.json();
         })
-
         .then(datos=>{
             extractInfoPokemon(datos);
         })
 
         .catch(error=>{
             console.error('There was a problem with the fetch operation:',error);
-        })
+        });
     }
     
 }
@@ -62,21 +61,28 @@ function extractInfoPokemon(info) {
         types:info.types.map(t=>t.type.name),
         id:info.id,
         experience:info.base_experience
+        
     }
-    
+   let selector="#"+info.name+" img";
+document.querySelector(selector).src=info.sprites.front_default; 
+selector="#"+info.name+" span";
+ let textos= document.querySelectorAll(selector)
+ textos[0].innerHTML=pokemon[info.name].types;
+ textos[1].innerHTML=pokemon[info.name].id;
+ textos[2].innerHTML=pokemon[info.name].experience;
 }
 function mostrarRapido (listaPk){
     var contenidoPk="";
     for (const pk in listaPk) {
         if (Object.hasOwnProperty.call(listaPk, pk)) {
             const element = listaPk[pk];
-            contenidoPk+= `<article id="${element.name}>
+            contenidoPk+= `<article id="${element.name}">
             <h3>${element.name}</h3>
             <img src="img/loading.gif" alt="" style="width:50%;">
             <div>
-               <p><label>Types:</label></p>
-               <p><label>Id:</label></p>
-               <p><label>Experience</label></p> 
+               <p><label>Types:</label><span></span></p>
+               <p><label>Id:</label><span></span></p>
+               <p><label>Experience</label><span></span></p> 
             </div>
     
         </article> `   
