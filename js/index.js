@@ -77,7 +77,7 @@ function CargarDatosPokemon() {
             }return resp.json();
         })
         .then(datos=>{
-           setTimeout (extractInfoPokemon,2000,datos);
+           setTimeout (extractInfoPokemon,500,datos);
         })
 
         .catch(error=>{
