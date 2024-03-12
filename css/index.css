@@ -30,6 +30,15 @@ header{
     width: 10%;
 
 }
+#containerpk article{
+    width: 20%;
+    border: 1px solid blue;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 
 /*modifica como se ve en pantallas menores*/
 
@@ -49,6 +58,15 @@ header{
 }
 #menumovil li:nth-child(-n+2){
     border: none;
+}
+#containerpk article{
+    width: 100%;
+    border: 1px solid blue;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
     
 }

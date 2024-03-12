@@ -1,3 +1,5 @@
+var pokemon={};
+
 window.onload=()=>{
     let menu=document.getElementById("ticmenu");
     menu.onclick=()=>{
@@ -18,9 +20,36 @@ window.onload=()=>{
     })
     .then(data=>{
         document.getElementById("loading").style.display="none";
-        console.log(data);
+        //console.log(data);para ver en consola
+        for (const pk of data.results) {
+            if(pokemon[pk.name]==undefined){
+                pokemon[pk.name]={url:pk.url}
+            }
+        }
+        CargarDatosPokemon
     })
     .catch(error=>{
         console.error('There was a problem with the fetch operation:',error);
     });
+}
+
+function CargarDatosPokemon() {
+    for (const pk in pokemon) {
+        fetch(pokemon[pk].url)
+        .then(resp=>{
+            if(!resp.ok){
+                throw new Error('Network response was not ok');
+
+            }return resp.json();
+        })
+
+        .then(datos=>{
+            console.log(datos);
+        })
+
+        .catch(error=>{
+            console.error('There was a problem with the fetch operation:',error);
+        })
+    }
+    
 }
