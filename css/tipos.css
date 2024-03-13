@@ -1,0 +1,87 @@
+#tiposSection {
+    margin-top: 20px;
+}
+
+.tipos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.type-link {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.type-link:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+}
+/* En tu archivo CSS (tipos.css) */
+.type-button {
+    display: block;
+    width: 30%; /* Ajusta según tus necesidades */
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.type-button:hover {
+    background-color: #45a049;
+}
+
+/* Clearfix para contenedor de tipos */
+.tipos-container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.type-container.active .pokemon-list-container {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    font-size: medium;
+    
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas con un ancho mínimo de 250px */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.pokemon-card {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Efecto de transición al pasar el ratón */
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05); /* Escalar ligeramente al pasar el ratón para un efecto visual */
+}
+
+
+
+
+
+

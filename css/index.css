@@ -1,68 +1,111 @@
-#logo{
-    width: 200px;
-    background-color: bisque;
+/* Reset de estilos y ajustes generales */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
 }
 
-/*header es un contenedor en el body*/
-
-header{
-    display: flex;
-    margin-right: 15%;
-    justify-content: space-around;
-    background-color: cornflowerblue;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
-.container{
-    width: 80%;
+
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    background-color: cadetblue;
+    padding: 20px;
 }
-.stylemenu{
-    list-style: none;
-    display: flex;
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
-.stylemenu a{
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+.menu-movil {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.menu-movil li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.menu-movil a {
     text-decoration: none;
-    display: block;
-    margin: 10px;
-}
-#menumovil li:nth-child(-n+2){
-    border-right: 3px black;
-}
-#menumovil{
-    font-size: medium;
+    color: #333;
     font-weight: bold;
-    font-style: oblique;
-    color: brown;
 }
-#loading{
-    display: block;
-    margin: 0 auto;
-    width: 10%;
 
+.containerFind {
+    margin: 20px 0;
 }
-#containerpk article{
-    background-color: mediumaquamarine;
-    width: 22%;
-    border:2px black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1%;
+
+#searchInput {
+    padding: 8px;
+    font-size: 16px;
 }
-#containerpk{
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.main {
+    margin-top: 20px;
+}
+
+#loading {
+    display: none; /* Ocultar la imagen de carga por defecto */
+}
+
+.navegacion {
+    margin-top: 20px;
+}
+
+#containerpk {
     display: flex;
     flex-wrap: wrap;
 }
-button{
 
-    margin-right: 10%;
-    font-size: medium;
-    font-family: 'Franklin Gothic Medium';
-    font-weight: bold;
-    font-display: flex;
-    text-align: right;
-    background-color: aquamarine;
+article {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    article {
+        width: 100%;
+    }
 }
 
 

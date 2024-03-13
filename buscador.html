@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search</title>
+    <link rel="stylesheet" href="css/buscador.css">
+    <script src="js/buscador.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/pokemon-logo.png" id="logo" alt="Pokémon Logo">
+            <h1>Pokémon Search</h1>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar Pokémon">
+            <button onclick="searchPokemon()">Buscar</button>
+        </div>
+
+        <!-- En el contenedor de resultados, se agregarán dinámicamente las tarjetas de Pokémon -->
+        <div id="result" class="results-container"></div>
+    </div>
+</body>
+</html>

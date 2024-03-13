@@ -23,10 +23,15 @@
 
 
 <ul id="menumovil" class="menu-movil stylemenu">
- <li><a href="autor.html">Autor</a></li>
-<li><a href="descripcion.html">Descripcion</a></li>
-<li><a href="principal.html">Principal</a></li>
+ <li><a href="index.html">All</a></li>
+<li><a href="tipos.html">Tipos</a></li>
 </ul>
+
+<div class="containerFind">
+    <input type="text" id="searchInput" placeholder="Buscar Pokémon">
+    <button onclick="searchPokemon">Buscar</button>
+    <div id="result"></div>
+</div>
 
 
 <div class="main">
@@ -54,14 +59,8 @@
     </section>
 </div>
 
-    <div class="container">
-        <input type="text" id="searchInput" placeholder="Buscar Pokémon">
-        <button onclick="searchPokemon()">Buscar</button>
-        <div id="result"></div>
-    </div>
-    <script src="app.js"></script>
 
-
+<script src="js/buscador.js"></script>
 
 </body>
 </html>
