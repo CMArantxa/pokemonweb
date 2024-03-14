@@ -37,21 +37,7 @@ hr {
     border: 1px solid #ddd;
 }
 
-.menu-movil {
-    list-style-type: none;
-    margin: 10px 0;
-}
 
-.menu-movil li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.menu-movil a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
 
 .containerFind {
     margin: 20px 0;
@@ -126,7 +112,8 @@ header{
 .stylemenu{
     display: inline;
 }
-.menu-movil{
+
+.menumovil{
     display: none;
 }
 #menumovil li:nth-child(-n+2){
@@ -140,6 +127,21 @@ header{
     flex-direction: column;
     align-items: center;
 
+}
+.menumovil {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.menumovil li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.menumovil a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
     
 }
