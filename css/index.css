@@ -24,8 +24,8 @@ header {
 }
 
 #logo {
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 75%;
 }
 
 h1 {
@@ -89,6 +89,15 @@ button {
 }
 section{
     background-color: lightskyblue;
+    display: flex;
+    flex-wrap: wrap;
+}
+section div{
+    float: right;
+    font-size: medium;
+    font-weight: bold;
+    color: brown;
+    margin-right: 15px;
 }
 
 article {
@@ -107,16 +116,6 @@ article img {
 
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 768px) {
-    article {
-        width: 100%;
-    }
-}
-
-
-
-/*modifica como se ve en pantallas menores*/
-
-@media screen and (max-width:400px) {
 
 h1{
     display:none;

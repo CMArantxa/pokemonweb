@@ -8,10 +8,10 @@ window.onload = () => {
 
     menu.onclick = () => {
 
-        if (document.getElementById("menu-movil").classList.contains("menu-movil")) {
-            document.getElementById("menu-movil").classList.remove("menu-movil");
+        if (document.getElementById("menumovil").classList.contains("menumovil")) {
+            document.getElementById("menumovil").classList.remove("menumovil");
         } else {
-            document.getElementById("menu-movil").classList.add("menu-movil");
+            document.getElementById("menumovil").classList.add("menumovil");
         }
     }
     let buttonNext = document.getElementById("next");
